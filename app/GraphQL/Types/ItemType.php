@@ -12,7 +12,7 @@ class ItemType extends GraphQLType
 
     protected $attributes = [
         'name' => 'Item',
-        'description' => 'Collection of brands',
+        'description' => 'Collection of items',
         'model' => Item::class
     ];
 

@@ -12,7 +12,7 @@ class ColorType extends GraphQLType
 
     protected $attributes = [
         'name' => 'Color',
-        'description' => 'Collection of brands',
+        'description' => 'Collection of colors',
         'model' => Color::class
     ];
 
@@ -35,10 +35,6 @@ class ColorType extends GraphQLType
                 'type' => Type::nonNull(Type::int()),
                 'description' => 'coming soon'
             ],
-            'item_id' => [
-                'type' => Type::nonNull(Type::int()),
-                'description' => 'coming soon'
-            ]
         ];
     }
 }

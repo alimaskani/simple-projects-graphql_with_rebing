@@ -12,7 +12,7 @@ class ViewItemType extends GraphQLType
 
     protected $attributes = [
         'name' => 'ViewItem',
-        'description' => 'Collection of brands',
+        'description' => 'Collection of viewitems',
         'model' => Item::class
     ];
 

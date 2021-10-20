@@ -19,25 +19,9 @@ class CreateColorMutation extends Mutation{
     public function args(): array
     {
         return [
-            'name' => [
-                'name' => 'name',
-                'type' => Type::string(),
-                'rules' => ['required']
-            ],
-            'hexcode' => [
-                'name' => 'subtitle',
-                'type' => Type::string(),
-                'rules' => ['required','unique:colors']
-            ],
-            'is_default' => [
-                'name' => 'subname',
-                'type' => Type::int(),
-                'rules' => ['required']
-            ],
-            'item_id' => [
-                'name' => 'item_id',
-                'type' => Type::int(),
-                'rules' => ['required','exists:items,id']
+
+            'input' => [
+                'type' => GraphQL::type('ColorInput')
             ]
         ];
     }

@@ -22,14 +22,8 @@ class CreateBrandMutation extends Mutation
     public function args(): array
     {
         return [
-            'name' => [
-                'name' => 'name',
-                'type' => Type::string(),
-                'rules' => ['required','unique:brands']
-            ],
-            'parent_id' => [
-                'name' => 'parent_id',
-                'type' => Type::int(),
+            'input' => [
+                'type' => GraphQL::type('BrandInput')
             ]
         ];
     }

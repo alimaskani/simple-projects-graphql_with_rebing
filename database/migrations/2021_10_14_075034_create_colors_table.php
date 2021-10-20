@@ -18,7 +18,6 @@ class CreateColorsTable extends Migration
             $table->string('name');
             $table->string('hexcode')->unique();
             $table->unsignedBigInteger('item_id');
-            $table->foreign('item_id')->references('id')->on('items');
             $table->boolean('is_default')->default(0);
             $table->timestamps();
         });

@@ -7,7 +7,8 @@ use Rebing\GraphQL\Support\Facades\GraphQL;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Mutation;
 
-class UpdateBrandMutation extends Mutation{
+class UpdateBrandMutation extends Mutation
+{
     protected $attributes = [
         'name' => 'updateBrand'
     ];
@@ -23,23 +24,17 @@ class UpdateBrandMutation extends Mutation{
         return [
             'id' => [
                 'name' => 'id',
-                'type' =>Type::int(),
-                'rules' => ['required']
-            ],
-            'name' => [
-                'name' => 'name',
-                'type' =>Type::string(),
-                'rules' => ['required','unique:brands,name']
-            ],
-            'parent_id' => [
-                'name' => 'parent_id',
                 'type' => Type::int(),
                 'rules' => ['required']
             ],
+            'input' => [
+                'type' => GraphQL::type('BrandInput')
+            ]
         ];
     }
 
-    public function resolve($root,$args){
+    public function resolve($root, $args)
+    {
         $brand = Brand::query()->findOrFail($args['id']);
         $brand->fill($args);
         $brand->save();

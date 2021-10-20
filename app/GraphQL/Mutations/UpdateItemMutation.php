@@ -26,31 +26,9 @@ class UpdateItemMutation extends Mutation{
                 'type' => Type::nonNull(Type::int()),
                 'rules' => ['required']
             ],
-            'name' => [
-                'name' => 'name',
-                'type' => Type::nonNull(Type::string()),
-                'rules' => ['required']
-            ],
-            'subtitle' => [
-                'name' => 'subtitle',
-                'type' => Type::nonNull(Type::string()),
-                'rules' => ['']
-            ],
-            'subname' => [
-                'name' => 'subname',
-                'type' => Type::nonNull(Type::string()),
-                'rules' => ['']
-            ],
-            'price' => [
-                'name' => 'price',
-                'type' => Type::nonNull(Type::string()),
-                'rules' => ['required']
-            ],
-            'brand_id' => [
-                'name' => 'brand_id',
-                'type' => Type::nonNull(Type::int()),
-                'rules' => ['required','exists:brands,id']
-            ],
+            'input' => [
+                'type' => GraphQL::type('ItemInput')
+            ]
         ];
     }
 

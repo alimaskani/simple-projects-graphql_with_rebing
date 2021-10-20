@@ -28,27 +28,9 @@ class UpdateColorMutation extends Mutation
                 'type' => Type::int(),
                 'rules' => ['required']
             ],
-            'name' => [
-                'name' => 'name',
-                'type' => Type::string(),
-                'rules' => ['required']
-            ],
-            'hexcode' => [
-                'name' => 'hexcode',
-                'type' => Type::string(),
-                'rules' => ['required']
-            ],
-            [
-                'is_default' => [
-                    'name' => 'is_default',
-                    'type' => Type::boolean(),
-                ]
-            ],
-            'item_id' => [
-                'name' => 'brand_id',
-                'type' => Type::int(),
-                'rules' => ['required', 'exists:items,id']
-            ],
+            'input' => [
+                'type' => GraphQL::type('ColorInput')
+            ]
         ];
     }
 
