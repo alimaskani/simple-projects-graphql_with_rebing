@@ -33,7 +33,6 @@ class CreateColorMutation extends Mutation{
             'name' => $args['name'],
             'hexcode' => $args['hexcode'],
             'is_default' => $args['is_default'],
-            'item_id' => $args['item_id']
         ]);
         return $item;
     }

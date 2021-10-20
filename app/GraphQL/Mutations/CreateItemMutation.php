@@ -1,6 +1,7 @@
 <?php
 namespace App\graphql\Mutations;
 
+use App\Models\Color;
 use App\Models\Item;
 use Rebing\GraphQL\Support\Mutation;
 use GraphQL\Type\Definition\Type;
@@ -21,7 +22,7 @@ class CreateItemMutation extends Mutation{
         return [
             'input' => [
                 'type' => GraphQL::type('ItemInput')
-            ]
+            ],
         ];
     }
 
@@ -33,6 +34,8 @@ class CreateItemMutation extends Mutation{
             'price' => $args['price'],
             'brand_id' => $args['brand_id'],
         ]);
+
+
         return $item;
     }
 
