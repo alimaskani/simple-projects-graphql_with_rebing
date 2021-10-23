@@ -12,7 +12,7 @@ class Item extends Model
 
     protected $fillable = [
         'name','subtitle',
-        'subname','price','brand_id',
+        'sub_name','brand_id',
     ];
 
     public function brand(){

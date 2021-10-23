@@ -27,14 +27,11 @@ class ColorType extends GraphQLType
                 'type' => Type::nonNull(Type::string()),
                 'description' => 'coming soon'
             ],
-            'hexcode' => [
+            'hex_code' => [
                 'type' => Type::nonNull(Type::string()),
                 'description' => 'coming soon'
             ],
-            'is_default' => [
-                'type' => Type::nonNull(Type::int()),
-                'description' => 'coming soon'
-            ],
+
         ];
     }
 }

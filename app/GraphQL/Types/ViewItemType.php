@@ -31,7 +31,7 @@ class ViewItemType extends GraphQLType
                 'type' => Type::nonNull(Type::string()),
                 'description' => 'coming soon'
             ],
-            'item_subname' => [
+            'item_sub_name' => [
                 'type' => Type::nonNull(Type::string()),
                 'description' => 'coming soon'
             ],

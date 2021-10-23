@@ -9,11 +9,10 @@ class Color extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'name',
+        'hex_code'
+    ];
 
-    ];
-    protected $casts=[
-        "is_default" => 'bool'
-    ];
 
     public function items(){
         return $this->belongsToMany(Item::class);

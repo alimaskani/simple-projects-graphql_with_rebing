@@ -20,8 +20,8 @@ class ColorInput extends InputType
                 'type' => Type::string(),
                 'rules' => ['required']
             ],
-            'hexcode' => [
-                'name' => 'hexcode',
+            'hex_code' => [
+                'name' => 'hex_code',
                 'type' => Type::string(),
                 'rules' => ['required', 'unique:colors']
             ],

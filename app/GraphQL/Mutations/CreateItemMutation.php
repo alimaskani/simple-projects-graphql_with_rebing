@@ -30,7 +30,7 @@ class CreateItemMutation extends Mutation{
         $item = Item::query()->create([
             'name' => $args['name'],
             'subtitle' => $args['subtitle'],
-            'subname' => $args['subname'],
+            'sub_name' => $args['sub_name'],
             'price' => $args['price'],
             'brand_id' => $args['brand_id'],
         ]);

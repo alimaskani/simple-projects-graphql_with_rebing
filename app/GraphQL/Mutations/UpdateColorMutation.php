@@ -17,7 +17,7 @@ class UpdateColorMutation extends Mutation
     public function type(): Type
     {
         // TODO: Implement type() method.
-        return GraphQL::type('Colors');
+        return GraphQL::type('Color');
     }
 
     public function args(): array

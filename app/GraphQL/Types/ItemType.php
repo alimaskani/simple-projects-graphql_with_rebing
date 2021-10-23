@@ -35,10 +35,6 @@ class ItemType extends GraphQLType
                 'type' => Type::nonNull(Type::string()),
                 'description' => 'coming soon'
             ],
-            'price' => [
-                'type' => Type::nonNull(Type::string()),
-                'description' => 'coming soon'
-            ],
             'brand_id' => [
                 'type' => Type::nonNull(Type::string()),
                 'description' => 'coming soon'

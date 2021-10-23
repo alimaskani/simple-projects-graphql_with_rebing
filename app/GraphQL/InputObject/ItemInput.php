@@ -20,8 +20,8 @@ class ItemInput extends InputType
                 'type' => Type::string(),
                 'rules' => ['required', 'unique:brands']
             ],
-            'subname' => [
-                'name' => 'subname',
+            'sub_name' => [
+                'name' => 'sub_name',
                 'type' => Type::string(),
                 'rules' => ['required']
             ],
