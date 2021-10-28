@@ -1,15 +1,17 @@
 <?php
-namespace App\graphql\Mutations;
 
-use App\Models\Color;
-use App\Models\Item;
+namespace App\GraphQL\Mutations;
+
+use App\Http\Controllers\ItemController;
 use Rebing\GraphQL\Support\Mutation;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 
-class CreateItemMutation extends Mutation{
+class CreateItemMutation extends Mutation
+{
     protected $attributes = [
-        'name' =>'createItem'
+        'name' => 'createItem',
+        'description' => ''
     ];
 
     public function type(): Type
@@ -26,17 +28,9 @@ class CreateItemMutation extends Mutation{
         ];
     }
 
-    public function resolve($root,$args){
-        $item = Item::query()->create([
-            'name' => $args['name'],
-            'subtitle' => $args['subtitle'],
-            'sub_name' => $args['sub_name'],
-            'price' => $args['price'],
-            'brand_id' => $args['brand_id'],
-        ]);
-
-
-        return $item;
+    public function resolve($root, $args)
+    {
+        return (new ItemController())->store($args);
     }
 
 

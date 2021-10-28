@@ -1,11 +1,13 @@
 <?php
-namespace App\graphql\Mutations;
 
-use App\Models\Brand;
+namespace App\GraphQL\Mutations;
+
+use App\Http\Controllers\BrandController;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Mutation;
 
-class DeleteBrandMutation extends Mutation{
+class DeleteBrandMutation extends Mutation
+{
     protected $attributes = [
         'name' => 'deleteBrand',
         'description' => 'Delete a Brand'
@@ -13,7 +15,6 @@ class DeleteBrandMutation extends Mutation{
 
     public function type(): Type
     {
-        // TODO: Implement type() method.
         return Type::boolean();
     }
 
@@ -23,13 +24,12 @@ class DeleteBrandMutation extends Mutation{
             'id' => [
                 'name' => 'id',
                 'type' => Type::int(),
-                'rules' => ['required','exists:brands,id']
             ]
         ];
     }
 
-    public function resolve($root, $args){
-        $brand = Brand::query()->findOrFail($args['id']);
-        return $brand->delete() ? true : false ;
+    public function resolve($root, $args)
+    {
+        return (new BrandController())->delete($args);
     }
 }

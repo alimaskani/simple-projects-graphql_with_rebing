@@ -9,7 +9,7 @@ class ItemInput extends InputType
 {
     protected $attributes = [
         'name' => 'ItemInput',
-        'description' => '.........'
+        'description' => ''
     ];
 
     public function fields(): array
@@ -18,22 +18,15 @@ class ItemInput extends InputType
             'name' => [
                 'name' => 'name',
                 'type' => Type::string(),
-                'rules' => ['required', 'unique:brands']
             ],
             'sub_name' => [
                 'name' => 'sub_name',
                 'type' => Type::string(),
-                'rules' => ['required']
             ],
-            'price' => [
-                'name' => 'price',
-                'type' => Type::string(),
-                'rules' => ['required']
-            ],
+
             'brand_id' => [
                 'name' => 'brand_id',
                 'type' => Type::int(),
-                'rules' => ['required', 'exist:brands,id']
             ]
         ];
     }

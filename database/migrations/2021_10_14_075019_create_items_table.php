@@ -20,7 +20,7 @@ class CreateItemsTable extends Migration
             $table->softDeletes();
             $table->unsignedBigInteger('brand_id');
             $table->foreign('brand_id')->references('id')->on('brands')
-            ->onDelete('cascade');
+                ->onDelete('cascade');
 
             $table->timestamps();
         });

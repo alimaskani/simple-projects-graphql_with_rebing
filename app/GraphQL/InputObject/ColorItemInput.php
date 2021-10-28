@@ -9,7 +9,7 @@ class ColorItemInput extends InputType
 {
     protected $attributes = [
         'name' => 'ItemInput',
-        'description' => '.........'
+        'description' => ''
     ];
 
     public function fields(): array

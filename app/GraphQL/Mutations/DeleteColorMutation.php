@@ -1,11 +1,13 @@
 <?php
-namespace App\graphql\Mutations;
 
-use App\Models\Color;
+namespace App\GraphQL\Mutations;
+
+use App\Http\Controllers\ColorController;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Mutation;
 
-class DeleteColorMutation extends Mutation{
+class DeleteColorMutation extends Mutation
+{
     protected $attributes = [
         'name' => 'deleteColor',
         'description' => 'Delete a Color'
@@ -13,7 +15,6 @@ class DeleteColorMutation extends Mutation{
 
     public function type(): Type
     {
-        // TODO: Implement type() method.
         return Type::boolean();
     }
 
@@ -23,14 +24,12 @@ class DeleteColorMutation extends Mutation{
             'id' => [
                 'name' => 'id',
                 'type' => Type::int(),
-                'rules' => ['required','exists:colors,id']
             ]
         ];
     }
 
-    public function resolve($root, $args){
-        $brand = Color::query()->findOrFail($args['id']);
-
-        return $brand->delete() ? true : false ;
+    public function resolve($root, $args)
+    {
+        return (new ColorController())->delete($args);
     }
 }

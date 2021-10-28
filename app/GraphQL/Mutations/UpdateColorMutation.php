@@ -1,8 +1,8 @@
 <?php
 
-namespace App\graphql\Mutations;
+namespace App\GraphQL\Mutations;
 
-use App\Models\Item;
+use App\Http\Controllers\ColorController;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Mutation;
@@ -16,7 +16,6 @@ class UpdateColorMutation extends Mutation
 
     public function type(): Type
     {
-        // TODO: Implement type() method.
         return GraphQL::type('Color');
     }
 
@@ -26,7 +25,6 @@ class UpdateColorMutation extends Mutation
             'id' => [
                 'name' => 'id',
                 'type' => Type::int(),
-                'rules' => ['required']
             ],
             'input' => [
                 'type' => GraphQL::type('ColorInput')
@@ -36,11 +34,7 @@ class UpdateColorMutation extends Mutation
 
     public function resolve($root, $args)
     {
-        $brand = Item::query()->findOrFail($args['id']);
-        $brand->fill($args);
-        $brand->save();
-
-        return $brand;
+        return (new ColorController())->update($args);
     }
 
 

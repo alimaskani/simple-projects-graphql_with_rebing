@@ -1,8 +1,8 @@
 <?php
 
-namespace App\graphql\Mutations;
+namespace App\GraphQL\Mutations;
 
-use App\Models\Brand;
+use App\Http\Controllers\BrandController;
 use Rebing\GraphQL\Support\Mutation;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
@@ -22,35 +22,18 @@ class CreateBrandMutation extends Mutation
     public function args(): array
     {
         return [
-            'input' => [
-                'type' => GraphQL::type('BrandInput')
-            ]
-        ];
-    }
-
-
-    public function validationErrorMessages(array $args = []): array
-    {
-        return [
-            'name.unique' => '**** is unique',
-            'name.required' => ' ****** is required',
+            'name' => [
+                'name' => 'name',
+                'description' => '',
+                'type' => Type::string(),
+            ],
 
         ];
     }
-
 
     public function resolve($root, $args)
     {
-        $parent_id = 0;
-        if ($args['parent_id'] != 0) {
-            $parent_id = $args['parent_id'];
-        }
-
-        $brand = Brand::query()->create([
-            'name' => $args['name'],
-            'parent_id' => $parent_id
-        ]);
-        return $brand;
+        return (new BrandController())->store($args);
     }
 
 

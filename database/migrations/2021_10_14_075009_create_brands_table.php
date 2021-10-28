@@ -16,7 +16,6 @@ class CreateBrandsTable extends Migration
         Schema::create('brands', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignIdFor(\App\Models\Brand::class,'parent_id');
             $table->timestamps();
         });
     }

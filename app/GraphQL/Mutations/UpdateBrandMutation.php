@@ -1,8 +1,8 @@
 <?php
 
-namespace App\graphql\Mutations;
+namespace App\GraphQL\Mutations;
 
-use App\Models\Brand;
+use App\Http\Controllers\BrandController;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Mutation;
@@ -15,7 +15,6 @@ class UpdateBrandMutation extends Mutation
 
     public function type(): Type
     {
-        // TODO: Implement type() method.
         return GraphQL::type('Brand');
     }
 
@@ -25,21 +24,17 @@ class UpdateBrandMutation extends Mutation
             'id' => [
                 'name' => 'id',
                 'type' => Type::int(),
-                'rules' => ['required']
             ],
-            'input' => [
-                'type' => GraphQL::type('BrandInput')
+            'name' => [
+                'name' => 'name',
+                'type' => Type::string()
             ]
         ];
     }
 
     public function resolve($root, $args)
     {
-        $brand = Brand::query()->findOrFail($args['id']);
-        $brand->fill($args);
-        $brand->save();
-
-        return $brand;
+        return (new BrandController())->update($args);
     }
 
 
