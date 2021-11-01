@@ -24,7 +24,7 @@ class UpdateItemMutation extends Mutation
         return [
             'id' => [
                 'name' => 'id',
-                'type' => Type::nonNull(Type::int()),
+                'type' => Type::int(),
             ],
             'input' => [
                 'name' => 'input',

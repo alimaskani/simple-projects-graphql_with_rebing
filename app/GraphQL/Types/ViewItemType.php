@@ -20,31 +20,31 @@ class ViewItemType extends GraphQLType
     {
         return [
             'id' => [
-                'type' => Type::nonNull(Type::int()),
+                'type' => Type::int(),
                 'description' => 'Id of a particular item'
             ],
             'brand_name' => [
-                'type' => Type::nonNull(Type::string()),
+                'type' => Type::string(),
                 'description' => ''
             ],
             'item_name' => [
-                'type' => Type::nonNull(Type::string()),
+                'type' => Type::string(),
                 'description' => ''
             ],
             'item_sub_name' => [
-                'type' => Type::nonNull(Type::string()),
+                'type' => Type::string(),
                 'description' => ''
             ],
             'price' => [
-                'type' => Type::nonNull(Type::string()),
+                'type' => Type::string(),
                 'description' => ''
             ],
             'color_name' => [
-                'type' => Type::nonNull(Type::string()),
+                'type' => Type::string(),
                 'description' => ''
             ],
             'default_color' => [
-                'type' => Type::nonNull(Type::string()),
+                'type' => Type::string(),
                 'description' => ''
             ]
         ];

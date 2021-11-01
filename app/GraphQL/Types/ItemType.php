@@ -20,19 +20,19 @@ class ItemType extends GraphQLType
     {
         return [
             'id' => [
-                'type' => Type::nonNull(Type::int()),
+                'type' => Type::int(),
                 'description' => 'Id of a particular item'
             ],
             'name' => [
-                'type' => Type::nonNull(Type::string()),
+                'type' => Type::string(),
                 'description' => ''
             ],
             'sub_name' => [
-                'type' => Type::nonNull(Type::string()),
+                'type' => Type::string(),
                 'description' => ''
             ],
             'brand_id' => [
-                'type' => Type::nonNull(Type::string()),
+                'type' => Type::string(),
                 'description' => ''
             ]
         ];
