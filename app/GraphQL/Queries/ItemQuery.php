@@ -2,7 +2,6 @@
 
 namespace App\GraphQL\Queries;
 
-use App\Models\Item;
 use App\Models\ViewItem;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
@@ -16,7 +15,6 @@ class ItemQuery extends Query
 
     public function type(): Type
     {
-        // TODO: Implement type() method.
         return GraphQL::type('ViewItem');
     }
 

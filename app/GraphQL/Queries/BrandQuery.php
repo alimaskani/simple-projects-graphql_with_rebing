@@ -15,7 +15,6 @@ class BrandQuery extends Query
 
     public function type(): Type
     {
-        // TODO: Implement type() method.
         return GraphQL::type('Brand');
     }
 

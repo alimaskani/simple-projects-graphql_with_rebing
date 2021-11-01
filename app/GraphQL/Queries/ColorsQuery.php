@@ -1,5 +1,5 @@
 <?php
-namespace App\graphql\Queries;
+namespace App\GraphQL\Queries;
 
 use App\Models\Color;
 use GraphQL\Type\Definition\Type;

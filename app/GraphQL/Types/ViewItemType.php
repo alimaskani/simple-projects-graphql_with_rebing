@@ -12,7 +12,7 @@ class ViewItemType extends GraphQLType
 
     protected $attributes = [
         'name' => 'ViewItem',
-        'description' => 'Collection of viewitems',
+        'description' => 'Collection of view_items',
         'model' => Item::class
     ];
 
@@ -25,27 +25,27 @@ class ViewItemType extends GraphQLType
             ],
             'brand_name' => [
                 'type' => Type::nonNull(Type::string()),
-                'description' => 'coming soon'
+                'description' => ''
             ],
             'item_name' => [
                 'type' => Type::nonNull(Type::string()),
-                'description' => 'coming soon'
+                'description' => ''
             ],
             'item_sub_name' => [
                 'type' => Type::nonNull(Type::string()),
-                'description' => 'coming soon'
+                'description' => ''
             ],
             'price' => [
                 'type' => Type::nonNull(Type::string()),
-                'description' => 'coming soon'
+                'description' => ''
             ],
             'color_name' => [
                 'type' => Type::nonNull(Type::string()),
-                'description' => 'coming soon'
+                'description' => ''
             ],
             'default_color' => [
                 'type' => Type::nonNull(Type::string()),
-                'description' => 'coming soon'
+                'description' => ''
             ]
         ];
     }

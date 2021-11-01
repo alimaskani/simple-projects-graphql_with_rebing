@@ -27,15 +27,6 @@ class BrandType extends GraphQLType
                 'type' => Type::nonNull(Type::string()),
                 'description' => 'name of  the brand'
             ],
-            'parent_id' => [
-                'type' => Type::nonNull(Type::int()),
-                'description'=> 'parent of brand'
-            ],
-            'is_default' => [
-                'type' => Type::nonNull(Type::int()),
-                'description' => 'coming soon'
-            ],
-
         ];
     }
 }

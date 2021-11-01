@@ -27,6 +27,7 @@ class UpdateColorMutation extends Mutation
                 'type' => Type::int(),
             ],
             'input' => [
+                'name' => 'input',
                 'type' => GraphQL::type('ColorInput')
             ]
         ];

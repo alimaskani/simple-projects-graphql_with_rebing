@@ -23,6 +23,7 @@ class CreateItemMutation extends Mutation
     {
         return [
             'input' => [
+                'name' => 'input',
                 'type' => GraphQL::type('ItemInput')
             ],
         ];

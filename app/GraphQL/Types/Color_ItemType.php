@@ -21,23 +21,23 @@ class Color_ItemType extends GraphQLType
         return [
             'id' => [
                 'type' => Type::nonNull(Type::int()),
-                'description' => 'coming soon'
+                'description' => ''
             ],
             'item_id' => [
                 'type' => Type::nonNull(Type::int()),
-                'description' => 'coming soon'
+                'description' => ''
             ],
             'color_id' => [
                 'type' => Type::nonNull(Type::int()),
-                'description' => 'coming soon'
+                'description' => ''
             ],
             'price' => [
                 'type' => Type::nonNull(Type::int()),
-                'description' => 'coming soon'
+                'description' => ''
             ],
             'is_default' => [
                 'type' => Type::nonNull(Type::int()),
-                'description' => 'coming soon'
+                'description' => ''
             ],
 
         ];

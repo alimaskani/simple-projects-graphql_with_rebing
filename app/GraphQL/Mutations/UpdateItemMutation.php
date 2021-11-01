@@ -27,6 +27,7 @@ class UpdateItemMutation extends Mutation
                 'type' => Type::nonNull(Type::int()),
             ],
             'input' => [
+                'name' => 'input',
                 'type' => GraphQL::type('ItemInput')
             ]
         ];
