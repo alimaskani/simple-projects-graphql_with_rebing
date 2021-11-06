@@ -35,17 +35,17 @@ class ItemController extends Controller
             'brand_id' => $args['brand_id'],
         ]);
 
-        $colors = $args['colors'];
 
+        /*** insert color_item ***/
+        $colors = $args['colors'];
         $find_id = Item::query()->where([
             ['name', '=', $name],
             ['brand_id', '=', $brand]
         ])->get();
-
+        /** for duplicate color_item table */
         if ($find_id->count() < 0){
             exit();
         }
-
         foreach ($colors as $key=>$value){
             foreach ($value as $items){
                 $item_id = $find_id[0]['id'];
@@ -61,6 +61,7 @@ class ItemController extends Controller
                 ]);
             }
         }
+
         return $item;
     }
 
