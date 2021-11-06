@@ -42,6 +42,10 @@ class ItemController extends Controller
             ['brand_id', '=', $brand]
         ])->get();
 
+        if ($find_id->count() < 0){
+            exit();
+        }
+
         foreach ($colors as $key=>$value){
             foreach ($value as $items){
                 $item_id = $find_id[0]['id'];

@@ -24,7 +24,7 @@ class CreateItemRecordView extends Migration
              d.sub_name,
              e.name AS name_brand
 
-             FROM color_item p
+             FROM color_items p
              INNER JOIN colors c ON c.id = p.color_id
              INNER JOIN items d ON  d.id = p.item_id
              INNER JOIN brands e ON e.id = d.brand_id
