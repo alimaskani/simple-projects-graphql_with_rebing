@@ -9,12 +9,15 @@ class ColorInput extends InputType
 {
     protected $attributes = [
         'name' => 'ColorInput',
-        'description' => ''
     ];
 
     public function fields(): array
     {
         return [
+            'id' => [
+                'name' => 'id',
+                'type' => Type::int(),
+            ],
             'name' => [
                 'name' => 'name',
                 'type' => Type::string(),

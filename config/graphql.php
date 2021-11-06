@@ -133,9 +133,10 @@ return [
                 'Item' => App\GraphQL\Types\ItemType::class,
                 'Color' => App\GraphQL\Types\ColorType::class,
                 'ViewItem' => App\GraphQL\Types\ViewItemType::class,
-                'BrandInput' => \App\GraphQL\InputObject\BrandInput::class,
+                'ColorItem' => \App\GraphQL\Types\ColorItemType::class,
                 'ColorInput' => \App\GraphQL\InputObject\ColorInput::class,
                 'ItemInput' => \App\GraphQL\InputObject\ItemInput::class,
+                'ColorItemInput' => \App\GraphQL\InputObject\ColorItemInput::class,
 
             ],
             'middleware' => [],

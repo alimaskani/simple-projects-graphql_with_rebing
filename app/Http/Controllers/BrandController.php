@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class BrandController extends Controller
 {
@@ -12,7 +13,7 @@ class BrandController extends Controller
         $rules = [
             'name' => ['required','unique:brands,name']
         ];
-        $this->general_validation($args,$rules);
+        $this->general_validation($args, $rules);
         $brand = Brand::query()->create([
             'name' => $args['name']
         ]);
@@ -33,9 +34,9 @@ class BrandController extends Controller
     {
         $rules = [
             'id' => ['required','exists:brands,id'],
-            'name' => ['required','unique:brands,name']
+            'name' => ['required','unique:brands,name,'.$args['id']]
         ];
-        $this->general_validation($args,$rules);
+        $this->general_validation($args, $rules);
         $brand = Brand::query()->findOrFail($args['id']);
         $brand->fill($args);
         $brand->save();

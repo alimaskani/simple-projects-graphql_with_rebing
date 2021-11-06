@@ -21,15 +21,12 @@ class ColorType extends GraphQLType
         return [
             'id' => [
                 'type' => Type::int(),
-                'description' => ''
             ],
             'name' => [
                 'type' => Type::string(),
-                'description' => ''
             ],
             'hex_code' => [
                 'type' => Type::string(),
-                'description' => ''
             ],
 
         ];

@@ -4,6 +4,7 @@ namespace App\GraphQL\Types;
 
 use App\Models\Item;
 use GraphQL\Type\Definition\Type;
+use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Type as GraphQLType;
 
 
@@ -34,7 +35,13 @@ class ItemType extends GraphQLType
             'brand_id' => [
                 'type' => Type::string(),
                 'description' => ''
+            ],
+            'colors' =>[
+                'name' => 'colors',
+                'type' => Type::listOf(GraphQL::type('ColorItem'))
             ]
+
+
         ];
     }
 }

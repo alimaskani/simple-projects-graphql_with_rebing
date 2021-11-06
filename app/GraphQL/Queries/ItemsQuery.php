@@ -15,10 +15,10 @@ class ItemsQuery extends  Query{
 
     public function type(): Type
     {
-        return Type::listOf(GraphQL::type('ViewItem'));
+        return Type::listOf(GraphQL::type('Item'));
     }
 
     public function resolve($root,$args){
-        return ViewItem::all();
+        return Item::all();
     }
 }

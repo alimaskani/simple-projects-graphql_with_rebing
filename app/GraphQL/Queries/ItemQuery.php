@@ -2,6 +2,7 @@
 
 namespace App\GraphQL\Queries;
 
+use App\Models\Item;
 use App\Models\ViewItem;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
@@ -15,7 +16,7 @@ class ItemQuery extends Query
 
     public function type(): Type
     {
-        return GraphQL::type('ViewItem');
+        return GraphQL::type('Item');
     }
 
     public function args(): array
@@ -31,6 +32,6 @@ class ItemQuery extends Query
 
     public function resolve($root, $args)
     {
-        return ViewItem::query()->findOrFail($args['id']);
+        return Item::query()->findOrFail($args['id']);
     }
 }

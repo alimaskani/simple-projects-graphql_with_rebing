@@ -13,14 +13,14 @@ class ColorController extends Controller
             'name' => ['required'],
             'hex_code' => ['required', 'unique:colors,hex_code']
         ];
-        $this->general_validation($args, $rules);
 
+        $this->general_validation($args, $rules);
         $color = Color::query()->create([
             'name' => $args['name'],
-            'hex_code' => $args['hex_code'],
+            "hex_code"=>$args["hex_code"]
         ]);
-
         return $color;
+
     }
 
     public function delete($args)

@@ -4,14 +4,15 @@ namespace App\GraphQL\Types;
 
 use App\Models\Color;
 use GraphQL\Type\Definition\Type;
+use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Type as GraphQLType;
 
 
-class Color_ItemType extends GraphQLType
+class ColorItemType extends GraphQLType
 {
 
     protected $attributes = [
-        'name' => 'Color_Item',
+        'name' => 'ColorItem',
         'description' => 'Collection of color and item',
         'model' => Color::class
     ];
@@ -39,6 +40,7 @@ class Color_ItemType extends GraphQLType
                 'type' => Type::int(),
                 'description' => ''
             ],
+
 
         ];
     }

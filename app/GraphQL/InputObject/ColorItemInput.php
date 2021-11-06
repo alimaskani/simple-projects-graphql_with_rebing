@@ -8,7 +8,7 @@ use Rebing\GraphQL\Support\InputType;
 class ColorItemInput extends InputType
 {
     protected $attributes = [
-        'name' => 'ItemInput',
+        'name' => 'ColorItemInput',
         'description' => ''
     ];
 
@@ -18,22 +18,18 @@ class ColorItemInput extends InputType
             'item_id' => [
                 'name' => 'name',
                 'type' => Type::int(),
-                'rules' => ['required', 'exists:items,id']
             ],
             'color_id' => [
                 'name' => 'color_id',
-                'type' => Type::string(),
-                'rules' => ['required','exists:colors,id']
+                'type' => Type::int(),
             ],
             'price' => [
                 'name' => 'price',
                 'type' => Type::int(),
-                'rules' => ['required']
             ],
             'is_default' => [
                 'name' => 'is_default',
                 'type' => Type::int(),
-                'rules' => ['required']
             ]
         ];
     }

@@ -22,20 +22,15 @@ class UpdateColorMutation extends Mutation
     public function args(): array
     {
         return [
-            'id' => [
-                'name' => 'id',
-                'type' => Type::int(),
-            ],
             'input' => [
                 'name' => 'input',
                 'type' => GraphQL::type('ColorInput')
             ]
         ];
     }
-
     public function resolve($root, $args)
     {
-        return (new ColorController())->update($args);
+        return (new ColorController())->update($args['input']);
     }
 
 

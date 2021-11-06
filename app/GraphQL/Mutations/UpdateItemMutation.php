@@ -22,20 +22,17 @@ class UpdateItemMutation extends Mutation
     public function args(): array
     {
         return [
-            'id' => [
-                'name' => 'id',
-                'type' => Type::int(),
-            ],
             'input' => [
                 'name' => 'input',
                 'type' => GraphQL::type('ItemInput')
-            ]
+            ],
+
         ];
     }
 
     public function resolve($root, $args)
     {
-        return (new ItemController())->update($args);
+        return (new ItemController())->update($args['input']);
     }
 
 

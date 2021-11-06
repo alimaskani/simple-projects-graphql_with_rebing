@@ -29,11 +29,10 @@ class CreateColorMutation extends Mutation
         ];
     }
 
-
     public function resolve($root, $args)
     {
 
-        return (new ColorController())->store($args);
+        return (new ColorController())->store($args['input']);
     }
 
 

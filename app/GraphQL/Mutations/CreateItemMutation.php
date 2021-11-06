@@ -29,9 +29,10 @@ class CreateItemMutation extends Mutation
         ];
     }
 
+
     public function resolve($root, $args)
     {
-        return (new ItemController())->store($args);
+        return (new ItemController())->store($args['input']);
     }
 
 
